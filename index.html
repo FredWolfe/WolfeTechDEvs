@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WolfeTech Devs | Wolfe Awotwi</title>
+
+    <!-- Google Fonts (loaded from the internet) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Space+Mono&display=swap"
+      rel="stylesheet" />
+
+    <!-- Our stylesheet (in the css/ folder) -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ================================================
+       NAVIGATION
+       ================================================ -->
+    <nav>
+      <a href="#home" class="nav-logo">Wolfe<span>Tech</span> Devs</a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ================================================
+       HOME / HERO SECTION
+       ================================================ -->
+    <section id="home">
+      <!-- Background wallpaper image (dimmed in CSS) -->
+      <div class="hero-bg"></div>
+
+      <!-- Dark gradient over the wallpaper -->
+      <div class="hero-overlay"></div>
+
+      <!-- Main hero text -->
+      <div class="hero-content">
+        <div class="hero-tag">WolfeTech Devs</div>
+
+        <h1>Wolfe<br /><span>Awotwi</span></h1>
+
+        <!-- Typed subtitle (animated by JS) — fallback text shown until JS runs -->
+        <!-- <p class="hero-sub" id="typed-sub">Aspiring Data Engineer | Software Developer</p> -->
+        <p class="hero-sub">Aspiring Data Engineer | Software Developer</p>
+
+        <p class="hero-quote">"One Life, A Million Dreams"</p>
+
+        <div class="btn-group">
+          <a href="#portfolio" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Let's Connect</a>
+        </div>
+      </div>
+
+      <!-- Scroll hint at bottom of hero -->
+      <div class="scroll-hint">scroll</div>
+    </section>
+
+    <!-- ================================================
+       ABOUT SECTION
+       ================================================ -->
+    <section id="about">
+      <div class="section-header fade-in">
+        <div class="section-tag">About Me</div>
+        <h2>Who I <em>Am</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Profile photo column -->
+        <div class="about-img-wrap fade-in">
+          <div class="about-img-frame">
+            <!-- Profile photo — file lives in assets/ folder -->
+            <img
+              src="assets/rosa.jpeg"
+              alt="Wolfe Awotwi — Data Engineer & Software Developer" />
+          </div>
+          <!-- Decorative corner brackets -->
+          <div class="about-corner tl"></div>
+          <div class="about-corner br"></div>
+          <div class="about-badge">ALX Africa &bull; Data Engineering</div>
+        </div>
+
+        <!-- Bio text column -->
+        <div class="about-text fade-in">
+          <p>
+            Hi, my name is
+            <strong style="color: var(--primary)"
+              >Wolfe Isaac Kweku Awotwi</strong
+            >. I have a background in Information Technology Management, and I'm
+            currently specializing in Data Engineering through ALX.
+          </p>
+          <p>
+            I have experience in mobile and full-stack development using Flutter
+            and the MERN stack, along with practical exposure to network systems
+            and infrastructure. I've contributed to building an e-commerce
+            platform as part of a team, and I've also
+            <strong style="color: var(--gold)">led and mentored a group</strong>
+            to develop a fully functional service platform with mobile
+            applications and an administrative dashboard.
+          </p>
+          <p>
+            My core strengths include data collection and cleaning, building
+            scalable applications, and solving real-world problems through
+            technology.
+          </p>
+          <p>
+            What sets me apart is my
+            <strong style="color: var(--primary)"
+              >versatility across different areas of tech</strong
+            >, my ability to lead and collaborate effectively, and my drive to
+            continuously learn and take on challenging tasks.
+          </p>
+          <p>
+            I'm particularly interested in working with tech-driven
+            organizations — especially in
+            <em style="color: var(--primary)"
+              >data, backend systems, or scalable platforms</em
+            >
+            — where I can contribute to building impactful solutions.
+          </p>
+          <p style="color: var(--muted)">
+            Beyond tech, I love
+            <strong style="color: var(--gold)"
+              >movies, games, and hanging out with friends.</strong
+            >
+          </p>
+          <br />
+          <br />
+
+          <!-- Skills list -->
+          <div class="section-tag">My Skills</div>
+          <div class="skills-grid">
+            <div class="skill-item">Data Engineering</div>
+            <div class="skill-item">Python &amp; SQL</div>
+            <div class="skill-item">Flutter (Mobile)</div>
+            <div class="skill-item">MERN Stack</div>
+            <div class="skill-item">ETL Pipelines</div>
+            <div class="skill-item">Power BI</div>
+            <div class="skill-item">Network Systems</div>
+            <div class="skill-item">Team Leadership</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+       PORTFOLIO SECTION
+       ================================================ -->
+    <section id="portfolio">
+      <div class="section-header fade-in">
+        <div class="section-tag">My Work</div>
+        <h2>Featured <em>Projects</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Project cards grid -->
+      <div class="portfolio-grid">
+        <!-- Card 1: Google Slides Presentation 1 -->
+        <div class="project-card fade-in">
+          <div class="card-header">
+            <span class="card-tag">ALX Team-Work &bull; Google Slides</span>
+            <span class="card-icon">📊</span>
+          </div>
+          <div class="card-body">
+            <h3>QuickNest Presentation</h3>
+            <p>
+              An alx team project presentation showcasing our collaborative
+              efforts.
+            </p>
+            <!-- Embedded Google Slides — change the URL to update the presentation -->
+            <iframe
+              class="card-embed"
+              src="https://docs.google.com/presentation/d/1ksHlQgMmQAvGrCtbBon8gJDVNUVcI8f91YgofV2AXxA/embed?start=false&loop=false&delayms=3000"
+              height="220"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Card 2: Google Slides Presentation 2 -->
+        <div class="project-card fade-in">
+          <div class="card-header">
+            <span class="card-tag">Data Analysis &bull; Google Slides</span>
+            <span class="card-icon">🔬</span>
+          </div>
+          <div class="card-body">
+            <h3>Data Gathering &amp Analysis</h3>
+            <p>
+              Strategic research presentation demonstrating analytical thinking
+              and problem-solving methodology.
+            </p>
+            <iframe
+              class="card-embed"
+              src="https://docs.google.com/presentation/d/1OvNHosgmYr3NaEzgyv-4ECY7DilsUhyGS_tWvqo-1yo/embed?start=false&loop=false&delayms=3000"
+              height="220"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Card 3: Power BI — spans full width -->
+        <div class="project-card fade-in" style="grid-column: 1 / -1">
+          <div class="card-header">
+            <span class="card-tag">Business Intelligence &bull; Power BI</span>
+            <span class="card-icon">📈</span>
+          </div>
+          <div class="card-body">
+            <h3>Interactive Power BI Dashboard</h3>
+            <p>
+              A fully interactive BI dashboard built with Microsoft Power BI —
+              transforming raw data into actionable visual insights.
+            </p>
+            <!-- Embedded Power BI report — paste a new embed URL here to update -->
+            <iframe
+              class="card-embed"
+              src="https://app.powerbi.com/view?r=eyJrIjoiY2MzN2ViYmMtY2FiNS00ODc3LThkYzktODRlOThkZWQyNzIzIiwidCI6IjM0Zjc2MzJlLWViZDQtNDNhMy1hYmE4LTk4YzQxOTgyM2UxZSIsImMiOjN9"
+              height="400"
+              allowfullscreen>
+            </iframe>
+            <br /><br />
+            <a
+              href="https://app.powerbi.com/view?r=eyJrIjoiY2MzN2ViYmMtY2FiNS00ODc3LThkYzktODRlOThkZWQyNzIzIiwidCI6IjM0Zjc2MzJlLWViZDQtNDNhMy1hYmE4LTk4YzQxOTgyM2UxZSIsImMiOjN9"
+              target="_blank"
+              class="card-link"
+              >Open Full Dashboard</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- /portfolio-grid -->
+
+      <!-- Showcase Gallery -->
+      <div class="gallery-title">// Showcase Gallery</div>
+
+      <div class="gallery-grid">
+        <!-- Gallery image 1 — file lives in assets/ folder -->
+        <div class="gallery-item fade-in">
+          <img
+            src="assets/show.jpeg"
+            alt="Wolfe presenting at showcase event" />
+          <div class="gallery-overlay"></div>
+        </div>
+
+        <!-- Gallery image 2 -->
+        <div class="gallery-item fade-in">
+          <img src="assets/showcase.jpeg" alt="Wolfe at the ALX showcase" />
+          <div class="gallery-overlay"></div>
+        </div>
+
+        <!-- Gallery video — file lives in assets/ folder -->
+        <div class="gallery-item fade-in">
+          <video controls muted playsinline>
+            <source src="assets/showcase_video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="gallery-overlay"></div>
+        </div>
+      </div>
+      <!-- /gallery-grid -->
+    </section>
+
+    <!-- ================================================
+       CONTACT SECTION
+       ================================================ -->
+    <section id="contact">
+      <div class="section-header fade-in">
+        <div class="section-tag">Contact</div>
+        <h2>Let's <em>Connect</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left column: email CTA -->
+        <div class="contact-left fade-in">
+          <h3>// Open to Opportunities</h3>
+          <p>
+            I'm currently seeking roles in data engineering, backend
+            development, or software engineering. If you're building something
+            impactful and need a versatile engineer who learns fast and leads
+            with intention — let's talk.
+          </p>
+
+          <!-- Clicking this opens Gmail compose to Wolfe's address -->
+          <a href="mailto:fredinatsu@gmail.com" class="email-cta">
+            <div class="email-icon">✉️</div>
+            <div class="email-text">
+              <span>Send me an email</span>
+              <strong>fredinatsu@gmail.com</strong>
+            </div>
+            <div class="email-arrow">→</div>
+          </a>
+        </div>
+
+        <!-- Right column: social links -->
+        <div class="contact-right fade-in">
+          <div class="social-title">// Find Me Online</div>
+
+          <div class="social-links">
+            <!-- LinkedIn -->
+            <a
+              href="http://www.linkedin.com/in/fred-wolfe"
+              target="_blank"
+              class="social-link sn-li">
+              <div
+                class="social-icon"
+                style="font-family: serif; font-weight: 900; color: #fff">
+                in
+              </div>
+              <div class="social-link-info">
+                <strong>LinkedIn</strong>
+                <span>fred-wolfe</span>
+              </div>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/mr_k.wolfie/"
+              target="_blank"
+              class="social-link sn-ig">
+              <div class="social-icon">📷</div>
+              <div class="social-link-info">
+                <strong>Instagram</strong>
+                <span>@mr_k.wolfie</span>
+              </div>
+            </a>
+
+            <!-- Snapchat -->
+            <a
+              href="https://www.snapchat.com/add/donwolfie?share_id=exL-00S-KQs&locale=en-GB"
+              target="_blank"
+              class="social-link sn-sc">
+              <div class="social-icon">👻</div>
+              <div class="social-link-info">
+                <strong>Snapchat</strong>
+                <span>@donwolf ie</span>
+              </div>
+            </a>
+          </div>
+          <!-- /social-links -->
+        </div>
+        <!-- /contact-right -->
+      </div>
+      <!-- /contact-grid -->
+    </section>
+
+    <!-- ================================================
+       FOOTER
+       ================================================ -->
+    <footer>
+      <span class="logo">WolfeTech Devs</span>
+      <span>© 2026 Wolfe Awotwi · Built with purpose</span>
+      <span style="color: var(--muted)">ALX Africa · Cohort 2026</span>
+    </footer>
+
+    <!-- Our JavaScript file (in the js/ folder) — loaded at the end of body -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
