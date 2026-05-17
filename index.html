@@ -4,65 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WolfeTech Devs | Wolfe Awotwi</title>
-
-    <!-- Google Fonts (loaded from the internet) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Space+Mono&display=swap"
       rel="stylesheet" />
-
-    <!-- Our stylesheet (in the css/ folder) -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <!-- ================================================
-       NAVIGATION
-       ================================================ -->
+         NAVIGATION
+         Added: Showcase link after Portfolio
+         ================================================ -->
     <nav>
       <a href="#home" class="nav-logo">Wolfe<span>Tech</span> Devs</a>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#showcase">Showcase</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
     <!-- ================================================
-       HOME / HERO SECTION
-       ================================================ -->
+         HOME / HERO SECTION
+         ================================================ -->
     <section id="home">
-      <!-- Background wallpaper image (dimmed in CSS) -->
       <div class="hero-bg"></div>
-
-      <!-- Dark gradient over the wallpaper -->
       <div class="hero-overlay"></div>
-
-      <!-- Main hero text -->
       <div class="hero-content">
         <div class="hero-tag">WolfeTech Devs</div>
-
         <h1>Wolfe<br /><span>Awotwi</span></h1>
-
-        <!-- Typed subtitle (animated by JS) — fallback text shown until JS runs -->
-        <!-- <p class="hero-sub" id="typed-sub">Aspiring Data Engineer | Software Developer</p> -->
         <p class="hero-sub">Aspiring Data Engineer | Software Developer</p>
-
         <p class="hero-quote">"One Life, A Million Dreams"</p>
-
         <div class="btn-group">
           <a href="#portfolio" class="btn btn-primary">View My Work</a>
           <a href="#contact" class="btn btn-outline">Let's Connect</a>
         </div>
       </div>
-
-      <!-- Scroll hint at bottom of hero -->
       <div class="scroll-hint">scroll</div>
     </section>
 
     <!-- ================================================
-       ABOUT SECTION
-       ================================================ -->
+         ABOUT SECTION
+         Changed: Photo is now a 2-slide carousel
+         Changed: Skills heading uses .skills-title class
+         ================================================ -->
     <section id="about">
       <div class="section-header fade-in">
         <div class="section-tag">About Me</div>
@@ -71,21 +58,39 @@
       </div>
 
       <div class="about-grid">
-        <!-- Profile photo column -->
+        <!-- PHOTO CAROUSEL — new photo first, rosa second, 5s auto-advance -->
         <div class="about-img-wrap fade-in">
           <div class="about-img-frame">
-            <!-- Profile photo — file lives in assets/ folder -->
-            <img
-              src="assets/rosa.jpeg"
-              alt="Wolfe Awotwi — Data Engineer & Software Developer" />
+            <div class="carousel" id="about-carousel">
+              <!-- Slide 1: New suit photo (shows first) -->
+              <div class="carousel-slide active">
+                <img
+                  src="assets/wolfe_suit.jpeg"
+                  alt="Wolfe Awotwi — Professional" />
+              </div>
+
+              <!-- Slide 2: Original rosa photo -->
+              <div class="carousel-slide">
+                <img
+                  src="assets/rosa.jpeg"
+                  alt="Wolfe Awotwi — Data Engineer & Software Developer" />
+              </div>
+
+              <!-- Navigation dots -->
+              <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+              </div>
+            </div>
+            <!-- /carousel -->
           </div>
-          <!-- Decorative corner brackets -->
+          <!-- /about-img-frame -->
           <div class="about-corner tl"></div>
           <div class="about-corner br"></div>
           <div class="about-badge">ALX Africa &bull; Data Engineering</div>
         </div>
 
-        <!-- Bio text column -->
+        <!-- BIO TEXT -->
         <div class="about-text fade-in">
           <p>
             Hi, my name is
@@ -129,11 +134,11 @@
               >movies, games, and hanging out with friends.</strong
             >
           </p>
-          <br />
+
           <br />
 
-          <!-- Skills list -->
-          <div class="section-tag">My Skills</div>
+          <!-- SKILLS — heading now uses skills-title, styled like gallery-title but primary colour, no underline -->
+          <div class="skills-title">// My Skills</div>
           <div class="skills-grid">
             <div class="skill-item">Data Engineering</div>
             <div class="skill-item">Python &amp; SQL</div>
@@ -146,11 +151,58 @@
           </div>
         </div>
       </div>
+      <!-- /about-grid -->
     </section>
 
     <!-- ================================================
-       PORTFOLIO SECTION
-       ================================================ -->
+         ELEVATOR PITCH SECTION (NEW)
+         Placed after About, before Portfolio
+         Placeholder for Loom video link
+         ================================================ -->
+    <section id="pitch">
+      <div class="section-header fade-in">
+        <div class="section-tag">Elevator Pitch</div>
+        <h2>Watch Me <em>In Action</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="pitch-container fade-in">
+        <!-- Left: description -->
+        <div class="pitch-description">
+          <h3>// My Video Portfolio</h3>
+          <p>
+            A short, personal walkthrough of who I am, what I build, and the
+            impact I aim to create — straight from me to you.
+          </p>
+          <p>
+            This is my video pitch, covering my background, skills, and what I
+            bring to any data or software engineering team.
+          </p>
+          <div class="pitch-tags">
+            <span class="pitch-tag">Data Engineering</span>
+            <span class="pitch-tag">Software Dev</span>
+            <span class="pitch-tag">ALX Africa</span>
+          </div>
+        </div>
+
+        <!-- Right: Loom video embed -->
+        <div class="pitch-video-wrap">
+          <iframe
+            src="https://www.loom.com/embed/5cfff6082ca142f4b3d541828ffc115c"
+            class="pitch-iframe"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <!-- /pitch-video-wrap -->
+      </div>
+      <!-- /pitch-container -->
+    </section>
+
+    <!-- ================================================
+         PORTFOLIO SECTION
+         Changed: Gallery removed from here (it's now its own section)
+         ================================================ -->
     <section id="portfolio">
       <div class="section-header fade-in">
         <div class="section-tag">My Work</div>
@@ -158,9 +210,7 @@
         <div class="section-line"></div>
       </div>
 
-      <!-- Project cards grid -->
       <div class="portfolio-grid">
-        <!-- Card 1: Google Slides Presentation 1 -->
         <div class="project-card fade-in">
           <div class="card-header">
             <span class="card-tag">ALX Team-Work &bull; Google Slides</span>
@@ -169,10 +219,9 @@
           <div class="card-body">
             <h3>QuickNest Presentation</h3>
             <p>
-              An alx team project presentation showcasing our collaborative
+              An ALX team project presentation showcasing our collaborative
               efforts.
             </p>
-            <!-- Embedded Google Slides — change the URL to update the presentation -->
             <iframe
               class="card-embed"
               src="https://docs.google.com/presentation/d/1ksHlQgMmQAvGrCtbBon8gJDVNUVcI8f91YgofV2AXxA/embed?start=false&loop=false&delayms=3000"
@@ -182,14 +231,13 @@
           </div>
         </div>
 
-        <!-- Card 2: Google Slides Presentation 2 -->
         <div class="project-card fade-in">
           <div class="card-header">
             <span class="card-tag">Data Analysis &bull; Google Slides</span>
             <span class="card-icon">🔬</span>
           </div>
           <div class="card-body">
-            <h3>Data Gathering &amp Analysis</h3>
+            <h3>Data Gathering &amp; Analysis</h3>
             <p>
               Strategic research presentation demonstrating analytical thinking
               and problem-solving methodology.
@@ -203,7 +251,6 @@
           </div>
         </div>
 
-        <!-- Card 3: Power BI — spans full width -->
         <div class="project-card fade-in" style="grid-column: 1 / -1">
           <div class="card-header">
             <span class="card-tag">Business Intelligence &bull; Power BI</span>
@@ -215,7 +262,6 @@
               A fully interactive BI dashboard built with Microsoft Power BI —
               transforming raw data into actionable visual insights.
             </p>
-            <!-- Embedded Power BI report — paste a new embed URL here to update -->
             <iframe
               class="card-embed"
               src="https://app.powerbi.com/view?r=eyJrIjoiY2MzN2ViYmMtY2FiNS00ODc3LThkYzktODRlOThkZWQyNzIzIiwidCI6IjM0Zjc2MzJlLWViZDQtNDNhMy1hYmE4LTk4YzQxOTgyM2UxZSIsImMiOjN9"
@@ -233,40 +279,51 @@
         </div>
       </div>
       <!-- /portfolio-grid -->
-
-      <!-- Showcase Gallery -->
-      <div class="gallery-title">// Showcase Gallery</div>
-
-      <div class="gallery-grid">
-        <!-- Gallery image 1 — file lives in assets/ folder -->
-        <div class="gallery-item fade-in">
-          <img
-            src="assets/show.jpeg"
-            alt="Wolfe presenting at showcase event" />
-          <div class="gallery-overlay"></div>
-        </div>
-
-        <!-- Gallery image 2 -->
-        <div class="gallery-item fade-in">
-          <img src="assets/showcase.jpeg" alt="Wolfe at the ALX showcase" />
-          <div class="gallery-overlay"></div>
-        </div>
-
-        <!-- Gallery video — file lives in assets/ folder -->
-        <div class="gallery-item fade-in">
-          <video controls muted playsinline>
-            <source src="assets/showcase_video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div class="gallery-overlay"></div>
-        </div>
-      </div>
-      <!-- /gallery-grid -->
     </section>
 
     <!-- ================================================
-       CONTACT SECTION
-       ================================================ -->
+         SHOWCASE SECTION (NEW — was gallery inside Portfolio)
+         Added to nav, full natural image dimensions,
+         click opens lightbox modal with prev/next
+         ================================================ -->
+    <section id="showcase">
+      <div class="section-header fade-in">
+        <div class="section-tag">Gallery</div>
+        <h2>My <em>Showcase</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="showcase-grid">
+        <!-- Each item has data-index and data-type for the lightbox JS -->
+        <div class="showcase-item fade-in" data-index="0" data-type="image">
+          <img
+            src="assets/show.jpeg"
+            alt="Wolfe presenting at ALX showcase event" />
+          <div class="gallery-overlay"></div>
+          <div class="showcase-hint"><span>🔍</span> View Full</div>
+        </div>
+
+        <div class="showcase-item fade-in" data-index="1" data-type="image">
+          <img src="assets/showcase.jpeg" alt="Wolfe at the ALX showcase" />
+          <div class="gallery-overlay"></div>
+          <div class="showcase-hint"><span>🔍</span> View Full</div>
+        </div>
+
+        <div class="showcase-item fade-in" data-index="2" data-type="video">
+          <!-- Poster shows a frame of the video while not playing -->
+          <video muted playsinline preload="metadata">
+            <source src="assets/showcase_video.mp4" type="video/mp4" />
+          </video>
+          <div class="gallery-overlay"></div>
+          <div class="showcase-hint"><span>▶</span> Play Video</div>
+        </div>
+      </div>
+      <!-- /showcase-grid -->
+    </section>
+
+    <!-- ================================================
+         CONTACT SECTION
+         ================================================ -->
     <section id="contact">
       <div class="section-header fade-in">
         <div class="section-tag">Contact</div>
@@ -275,7 +332,6 @@
       </div>
 
       <div class="contact-grid">
-        <!-- Left column: email CTA -->
         <div class="contact-left fade-in">
           <h3>// Open to Opportunities</h3>
           <p>
@@ -284,8 +340,6 @@
             impactful and need a versatile engineer who learns fast and leads
             with intention — let's talk.
           </p>
-
-          <!-- Clicking this opens Gmail compose to Wolfe's address -->
           <a href="mailto:fredinatsu@gmail.com" class="email-cta">
             <div class="email-icon">✉️</div>
             <div class="email-text">
@@ -296,12 +350,9 @@
           </a>
         </div>
 
-        <!-- Right column: social links -->
         <div class="contact-right fade-in">
           <div class="social-title">// Find Me Online</div>
-
           <div class="social-links">
-            <!-- LinkedIn -->
             <a
               href="http://www.linkedin.com/in/fred-wolfe"
               target="_blank"
@@ -316,8 +367,6 @@
                 <span>fred-wolfe</span>
               </div>
             </a>
-
-            <!-- Instagram -->
             <a
               href="https://www.instagram.com/mr_k.wolfie/"
               target="_blank"
@@ -328,8 +377,6 @@
                 <span>@mr_k.wolfie</span>
               </div>
             </a>
-
-            <!-- Snapchat -->
             <a
               href="https://www.snapchat.com/add/donwolfie?share_id=exL-00S-KQs&locale=en-GB"
               target="_blank"
@@ -337,27 +384,47 @@
               <div class="social-icon">👻</div>
               <div class="social-link-info">
                 <strong>Snapchat</strong>
-                <span>@donwolf ie</span>
+                <span>@donwolfie</span>
               </div>
             </a>
           </div>
-          <!-- /social-links -->
         </div>
-        <!-- /contact-right -->
       </div>
-      <!-- /contact-grid -->
     </section>
 
     <!-- ================================================
-       FOOTER
-       ================================================ -->
+         FOOTER
+         ================================================ -->
     <footer>
       <span class="logo">WolfeTech Devs</span>
       <span>© 2026 Wolfe Awotwi · Built with purpose</span>
       <span style="color: var(--muted)">ALX Africa · Cohort 2026</span>
     </footer>
 
-    <!-- Our JavaScript file (in the js/ folder) — loaded at the end of body -->
+    <!-- ================================================
+         LIGHTBOX MODAL
+         Opens when user clicks a showcase item
+         ================================================ -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Media viewer">
+      <button class="lightbox-close" id="lb-close" aria-label="Close">✕</button>
+      <button
+        class="lightbox-nav lightbox-prev"
+        id="lb-prev"
+        aria-label="Previous">
+        &#8249;
+      </button>
+      <div class="lightbox-content" id="lb-content"></div>
+      <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="Next">
+        &#8250;
+      </button>
+      <div class="lightbox-counter" id="lb-counter">1 / 3</div>
+    </div>
+
     <script src="js/main.js"></script>
   </body>
 </html>
