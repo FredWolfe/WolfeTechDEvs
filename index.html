@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WolfeTech Devs | Wolfe Awotwi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Space+Mono&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ================================================
+         NAVIGATION
+         Added: Showcase link after Portfolio
+         ================================================ -->
+    <nav>
+      <a href="#home" class="nav-logo">Wolfe<span>Tech</span> Devs</a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#showcase">Showcase</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ================================================
+         HOME / HERO SECTION
+         ================================================ -->
+    <section id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-tag">WolfeTech Devs</div>
+        <h1>Wolfe<br /><span>Awotwi</span></h1>
+        <p class="hero-sub">Aspiring Data Engineer | Software Developer</p>
+        <p class="hero-quote">"One Life, A Million Dreams"</p>
+        <div class="btn-group">
+          <a href="#portfolio" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Let's Connect</a>
+        </div>
+      </div>
+      <div class="scroll-hint">scroll</div>
+    </section>
+
+    <!-- ================================================
+         ABOUT SECTION
+         Changed: Photo is now a 2-slide carousel
+         Changed: Skills heading uses .skills-title class
+         ================================================ -->
+    <section id="about">
+      <div class="section-header fade-in">
+        <div class="section-tag">About Me</div>
+        <h2>Who I <em>Am</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- PHOTO CAROUSEL — new photo first, rosa second, 5s auto-advance -->
+        <div class="about-img-wrap fade-in">
+          <div class="about-img-frame">
+            <div class="carousel" id="about-carousel">
+              <!-- Slide 1: New suit photo (shows first) -->
+              <div class="carousel-slide active">
+                <img
+                  src="assets/wolfe_suit.jpeg"
+                  alt="Wolfe Awotwi — Professional" />
+              </div>
+
+              <!-- Slide 2: Original rosa photo -->
+              <div class="carousel-slide">
+                <img
+                  src="assets/rosa.jpeg"
+                  alt="Wolfe Awotwi — Data Engineer & Software Developer" />
+              </div>
+
+              <!-- Navigation dots -->
+              <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+              </div>
+            </div>
+            <!-- /carousel -->
+          </div>
+          <!-- /about-img-frame -->
+          <div class="about-corner tl"></div>
+          <div class="about-corner br"></div>
+          <div class="about-badge">ALX Africa &bull; Data Engineering</div>
+        </div>
+
+        <!-- BIO TEXT -->
+        <div class="about-text fade-in">
+          <p>
+            Hi, my name is
+            <strong style="color: var(--primary)"
+              >Wolfe Isaac Kweku Awotwi</strong
+            >. I have a background in Information Technology Management, and I'm
+            currently specializing in Data Engineering through ALX.
+          </p>
+          <p>
+            I have experience in mobile and full-stack development using Flutter
+            and the MERN stack, along with practical exposure to network systems
+            and infrastructure. I've contributed to building an e-commerce
+            platform as part of a team, and I've also
+            <strong style="color: var(--gold)">led and mentored a group</strong>
+            to develop a fully functional service platform with mobile
+            applications and an administrative dashboard.
+          </p>
+          <p>
+            My core strengths include data collection and cleaning, building
+            scalable applications, and solving real-world problems through
+            technology. I'm especially interested in using technology and
+            data-driven systems to
+            <strong style="color: var(--primary)"
+              >support job creation and improve access to opportunities within
+              local communities.</strong
+            >
+          </p>
+          <p>
+            What sets me apart is my
+            <strong style="color: var(--primary)"
+              >versatility across different areas of tech</strong
+            >, my ability to lead and collaborate effectively, and my drive to
+            continuously learn and take on challenging tasks. I enjoy
+            understanding how systems work at a deeper level and building
+            solutions that can scale and create meaningful impact.
+          </p>
+          <p>
+            I'm particularly interested in working with tech-driven
+            organizations — especially in
+            <em style="color: var(--primary)"
+              >data, backend systems, or scalable platforms</em
+            >
+            — where I can contribute to building impactful
+            <strong style="color: var(--primary)"
+              >solutions that improve lives and solve real-world
+              problems.</strong
+            >
+          </p>
+          <p style="color: var(--muted)">
+            Beyond tech, I love
+            <strong style="color: var(--gold)"
+              >movies, games, and hanging out with friends.</strong
+            >
+            I've also always had an interest in
+            <strong style="color: var(--gold)">acting and animation</strong>,
+            and I enjoy bringing creativity into the way I approach
+            problem-solving and innovation.
+          </p>
+
+          <br />
+
+          <!-- SKILLS — heading now uses skills-title, styled like gallery-title but primary colour, no underline -->
+          <div class="skills-title">// My Skills</div>
+          <div class="skills-grid">
+            <div class="skill-item">Data Engineering</div>
+            <div class="skill-item">Python &amp; SQL</div>
+            <div class="skill-item">Flutter (Mobile)</div>
+            <div class="skill-item">MERN Stack</div>
+            <div class="skill-item">ETL Pipelines</div>
+            <div class="skill-item">Power BI</div>
+            <div class="skill-item">Network Systems</div>
+            <div class="skill-item">Team Leadership</div>
+          </div>
+        </div>
+      </div>
+      <!-- /about-grid -->
+    </section>
+
+    <!-- ================================================
+         ELEVATOR PITCH SECTION (NEW)
+         Placed after About, before Portfolio
+         Placeholder for Loom video link
+         ================================================ -->
+    <section id="pitch">
+      <div class="section-header fade-in">
+        <div class="section-tag">Elevator Pitch</div>
+        <h2>Watch Me <em>In Action</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="pitch-container fade-in">
+        <!-- Left: description -->
+        <div class="pitch-description">
+          <h3>// My Elevator Pitch</h3>
+          <p>
+            This video is a self-introduction outlining my background and
+            current focus in data engineering.
+          </p>
+          <p>
+            I share my experience in full stack and mobile development using the
+            MERN-stack of Mongo, Express, React, and Node.js, as well as
+            Flutter,
+          </p>
+          <div class="pitch-tags">
+            <span class="pitch-tag">#alxghana</span>
+            <span class="pitch-tag">#alxafrica</span>
+            <span class="pitch-tag">#alxghanadataclub</span>
+          </div>
+        </div>
+
+        <!-- Right: Loom video embed -->
+        <div class="pitch-video-wrap">
+          <iframe
+            src="https://www.loom.com/embed/5cfff6082ca142f4b3d541828ffc115c"
+            class="pitch-iframe"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <!-- /pitch-video-wrap -->
+      </div>
+      <!-- /pitch-container -->
+    </section>
+
+    <!-- ================================================
+         PORTFOLIO SECTION
+         Changed: Now shows the ONE flagship project (AHICP) with a
+         dashboard screenshot carousel, rather than every project.
+         Older ALX team-work presentations moved to projects.html
+         (they still exist — just under "View All Projects").
+         ================================================ -->
+    <section id="portfolio">
+      <div class="section-header fade-in">
+        <div class="section-tag">My Work</div>
+        <h2>Featured <em>Project</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="project-card featured-project fade-in">
+          <!-- Dashboard screenshot carousel: Executive → Customer Risk → Operations -->
+          <div class="carousel landscape" id="ahicp-home-carousel">
+            <div class="carousel-slide active">
+              <img
+                src="assets/projects/ahicp/ahicp_executive.jpeg"
+                alt="AHICP Executive Dashboard — Power BI" />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="assets/projects/ahicp/ahicp_customer_risk.jpeg"
+                alt="AHICP Customer Risk Dashboard — Power BI" />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="assets/projects/ahicp/ahicp_operations.jpeg"
+                alt="AHICP Operations Dashboard — Power BI" />
+            </div>
+            <div class="carousel-dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+            </div>
+          </div>
+          <!-- /carousel -->
+
+          <div class="featured-project-body">
+            <span class="featured-badge">★ Flagship Project</span>
+            <h3>AHICP — Insurance Risk Analytics &amp; BI Platform</h3>
+            <p>
+              An end-to-end insurance risk analytics build: from raw claims and
+              enrollment data to a live, three-dashboard Power BI platform.
+              Includes a custom 0–100 employee Risk Score engine built in
+              BigQuery SQL, 17 answered business questions, and a
+              caught-and-fixed data quality bug that changed the final risk
+              picture.
+            </p>
+            <div class="tech-badges">
+              <span class="tech-badge">Python &amp; Pandas</span>
+              <span class="tech-badge">Google BigQuery</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Power BI &amp; DAX</span>
+              <span class="tech-badge">ERD Modeling</span>
+            </div>
+            <div class="featured-project-links">
+              <a href="projects.html#ahicp" class="card-link btn-style"
+                >Full Case Study</a
+              >
+              <a
+                href="https://github.com/FredWolfe/AHICP-Insurance-Risk-Analytics"
+                target="_blank"
+                class="card-link btn-style"
+                >View Code on GitHub</a
+              >
+            </div>
+          </div>
+          <!-- /featured-project-body -->
+        </div>
+        <!-- /featured-project -->
+      </div>
+      <!-- /portfolio-grid -->
+
+      <div class="view-all-wrap fade-in">
+        <a href="projects.html" target="_blank" class="view-all-btn"
+          >View All Projects →</a
+        >
+      </div>
+    </section>
+
+    <!-- ================================================
+         SHOWCASE SECTION (NEW — was gallery inside Portfolio)
+         Added to nav, full natural image dimensions,
+         click opens lightbox modal with prev/next
+         ================================================ -->
+    <section id="showcase">
+      <div class="section-header fade-in">
+        <div class="section-tag">Gallery</div>
+        <h2>My <em>Showcase</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="showcase-grid">
+        <!-- Each item has data-index and data-type for the lightbox JS -->
+        <div class="showcase-item fade-in" data-index="0" data-type="image">
+          <img
+            src="assets/show.jpeg"
+            alt="Wolfe presenting at ALX showcase event" />
+          <div class="gallery-overlay"></div>
+          <div class="showcase-hint"><span>🔍</span> View Full</div>
+        </div>
+
+        <div class="showcase-item fade-in" data-index="1" data-type="image">
+          <img src="assets/showcase.jpeg" alt="Wolfe at the ALX showcase" />
+          <div class="gallery-overlay"></div>
+          <div class="showcase-hint"><span>🔍</span> View Full</div>
+        </div>
+
+        <div class="showcase-item fade-in" data-index="2" data-type="video">
+          <!-- Poster shows a frame of the video while not playing -->
+          <video muted playsinline preload="metadata">
+            <source src="assets/showcase_video.mp4" type="video/mp4" />
+          </video>
+          <div class="gallery-overlay"></div>
+          <div class="showcase-hint"><span>▶</span> Play Video</div>
+        </div>
+      </div>
+      <!-- /showcase-grid -->
+    </section>
+
+    <!-- ================================================
+         CONTACT SECTION
+         ================================================ -->
+    <section id="contact">
+      <div class="section-header fade-in">
+        <div class="section-tag">Contact</div>
+        <h2>Let's <em>Connect</em></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-left fade-in">
+          <h3>// Open to Opportunities</h3>
+          <p>
+            I'm currently seeking roles in data engineering, backend
+            development, or software engineering. If you're building something
+            impactful and need a versatile engineer who learns fast and leads
+            with intention — let's talk.
+          </p>
+          <a href="mailto:fredinatsu@gmail.com" class="email-cta">
+            <div class="email-icon">✉️</div>
+            <div class="email-text">
+              <span>Send me an email</span>
+              <strong>fredinatsu@gmail.com</strong>
+            </div>
+            <div class="email-arrow">→</div>
+          </a>
+        </div>
+
+        <div class="contact-right fade-in">
+          <div class="social-title">// Find Me Online</div>
+          <div class="social-links">
+            <a
+              href="http://www.linkedin.com/in/fred-wolfe"
+              target="_blank"
+              class="social-link sn-li">
+              <div
+                class="social-icon"
+                style="font-family: serif; font-weight: 900; color: #fff">
+                in
+              </div>
+              <div class="social-link-info">
+                <strong>LinkedIn</strong>
+                <span>fred-wolfe</span>
+              </div>
+            </a>
+            <a
+              href="https://github.com/FredWolfe"
+              target="_blank"
+              class="social-link sn-gh">
+              <div class="social-icon">💻</div>
+              <div class="social-link-info">
+                <strong>GitHub</strong>
+                <span>FredWolfe</span>
+              </div>
+            </a>
+            <a
+              href="https://www.instagram.com/mr_k.wolfie/"
+              target="_blank"
+              class="social-link sn-ig">
+              <div class="social-icon">📷</div>
+              <div class="social-link-info">
+                <strong>Instagram</strong>
+                <span>@mr_k.wolfie</span>
+              </div>
+            </a>
+            <a
+              href="https://www.snapchat.com/add/donwolfie?share_id=exL-00S-KQs&locale=en-GB"
+              target="_blank"
+              class="social-link sn-sc">
+              <div class="social-icon">👻</div>
+              <div class="social-link-info">
+                <strong>Snapchat</strong>
+                <span>@donwolfie</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         FOOTER
+         ================================================ -->
+    <footer>
+      <span class="logo">WolfeTech Devs</span>
+      <span>© 2026 Wolfe Awotwi · Built with purpose</span>
+      <span style="color: var(--muted)">ALX Africa · Cohort 2026</span>
+    </footer>
+
+    <!-- ================================================
+         LIGHTBOX MODAL
+         Opens when user clicks a showcase item
+         ================================================ -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Media viewer">
+      <button class="lightbox-close" id="lb-close" aria-label="Close">✕</button>
+      <button
+        class="lightbox-nav lightbox-prev"
+        id="lb-prev"
+        aria-label="Previous">
+        &#8249;
+      </button>
+      <div class="lightbox-content" id="lb-content"></div>
+      <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="Next">
+        &#8250;
+      </button>
+      <div class="lightbox-counter" id="lb-counter">1 / 3</div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1577 @@
+/* ============================================
+   WolfeTech Devs - Portfolio Stylesheet
+   Author: Wolfe Awotwi
+   ============================================
+
+   TABLE OF CONTENTS:
+   1. CSS Variables (colours, fonts)
+   2. Reset & Base
+   3. Navigation
+   4. Home / Hero Section
+   5. About Section
+   6. Portfolio Section
+   7. Gallery
+   8. Contact Section
+   9. Footer
+   10. Animations & Effects
+   11. Responsive (Mobile)
+============================================ */
+
+/* ── 1. CSS VARIABLES ─────────────────────── */
+:root {
+  --primary: #00d4ff; /* Cyan highlight */
+  --accent: #7b2fff; /* Purple accent  */
+  --gold: #f0c040; /* Gold detail    */
+  --bg: #050a14; /* Dark background */
+  --surface: rgba(0, 212, 255, 0.04);
+  --border: rgba(0, 212, 255, 0.15);
+  --text: #e0f0ff;
+  --muted: #7a9bb5;
+}
+
+/* ── 2. RESET & BASE ──────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scroll between sections */
+}
+
+body {
+  font-family: "Rajdhani", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 100px 6vw 60px;
+}
+
+/* ── 3. NAVIGATION ────────────────────────── */
+nav {
+  position: fixed; /* Stays at top while scrolling */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5, 10, 20, 0.85);
+  backdrop-filter: blur(16px); /* Frosted glass effect */
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: "Orbitron", monospace;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.nav-logo span {
+  color: var(--accent);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+nav ul a {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+}
+
+/* Animated underline on hover */
+nav ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+nav ul a:hover {
+  color: var(--primary);
+}
+nav ul a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── 4. HOME / HERO ───────────────────────── */
+#home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("../assets/wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.35) saturate(1.3);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 10, 20, 0.9) 0%,
+    rgba(123, 47, 255, 0.15) 50%,
+    rgba(5, 10, 20, 0.7) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+}
+
+.hero-tag {
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--primary);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-tag::before {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: var(--primary);
+}
+
+h1 {
+  font-family: "Orbitron", monospace;
+  font-size: clamp(2.8rem, 7vw, 5.5rem); /* Fluid font size */
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+h1 span {
+  color: var(--primary);
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.hero-quote {
+  font-family: "Space Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--gold);
+  border-left: 2px solid var(--gold);
+  padding-left: 1rem;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Buttons use clip-path for the cut-corner tech look */
+.btn {
+  padding: 0.85rem 2.2rem;
+  font-family: "Orbitron", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 12px) 0,
+    100% 12px,
+    100% 100%,
+    12px 100%,
+    0 calc(100% - 12px)
+  );
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: rgba(0, 212, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Scroll hint arrow at bottom of hero */
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+
+.scroll-hint::after {
+  content: "";
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--primary), transparent);
+}
+
+/* ── 5. SECTION SHARED STYLES ─────────────── */
+.section-header {
+  margin-bottom: 3.5rem;
+}
+
+.section-tag {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--primary);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-tag::before {
+  content: "//";
+  color: var(--accent);
+}
+
+h2 {
+  font-family: "Orbitron", monospace;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+}
+
+h2 em {
+  color: var(--primary);
+  font-style: normal;
+}
+
+.section-line {
+  width: 60px;
+  height: 3px;
+  margin-top: 1rem;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+}
+
+/* ── 5. ABOUT ─────────────────────────────── */
+#about {
+  background: linear-gradient(
+    180deg,
+    var(--bg) 0%,
+    rgba(123, 47, 255, 0.05) 50%,
+    var(--bg) 100%
+  );
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-img-wrap {
+  position: relative;
+}
+
+/* Cut-corner frame around profile photo */
+.about-img-frame {
+  position: relative;
+  border: 1px solid var(--border);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% 100%,
+    20px 100%,
+    0 calc(100% - 20px)
+  );
+  overflow: hidden;
+}
+
+.about-img-frame img {
+  width: 100%;
+  display: block;
+  filter: saturate(0.8) contrast(1.1);
+  transition: filter 0.4s;
+}
+
+.about-img-frame:hover img {
+  filter: saturate(1.1) contrast(1.05);
+}
+
+.about-img-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(0, 212, 255, 0.15)
+  );
+  pointer-events: none;
+}
+
+/* Decorative corner brackets */
+.about-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--primary);
+  border-style: solid;
+}
+
+.about-corner.tl {
+  top: -10px;
+  left: -10px;
+  border-width: 2px 0 0 2px;
+}
+.about-corner.br {
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 2px 2px 0;
+}
+
+.about-badge {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  background: var(--accent);
+  font-family: "Orbitron", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  padding: 0.6rem 1rem;
+  color: #fff;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 8px) 0,
+    100% 8px,
+    100% 100%,
+    8px 100%,
+    0 calc(100% - 8px)
+  );
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(224, 240, 255, 0.8);
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+}
+
+/* Skills grid with arrow bullets */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.skill-item::before {
+  content: "▸";
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+/* ── 6. PORTFOLIO ─────────────────────────── */
+#portfolio {
+  background: var(--bg);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.project-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+}
+
+.card-header {
+  padding: 1.5rem 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card-tag {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+}
+
+.card-body {
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.card-body h3 {
+  font-family: "Orbitron", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.card-embed {
+  width: 100%;
+  border: none;
+  display: block;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: gap 0.2s;
+}
+
+.card-link:hover {
+  gap: 0.8rem;
+}
+.card-link::after {
+  content: "→";
+}
+
+/* ── 7. GALLERY ───────────────────────────── */
+.gallery-title {
+  font-family: "Orbitron", monospace;
+  font-size: 1.2rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(240, 192, 64, 0.3);
+  padding-bottom: 0.75rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s;
+}
+
+.gallery-item:hover {
+  border-color: var(--primary);
+}
+
+.gallery-item img,
+.gallery-item video {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 212, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* ── 8. CONTACT ───────────────────────────── */
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    var(--bg) 0%,
+    rgba(123, 47, 255, 0.08) 100%
+  );
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin-top: 2rem;
+}
+
+.contact-left h3 {
+  font-family: "Orbitron", monospace;
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.contact-left p {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* Large email button */
+.email-cta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+  transition: all 0.3s;
+}
+
+.email-cta:hover {
+  border-color: var(--primary);
+  background: rgba(0, 212, 255, 0.08);
+  transform: translateX(6px);
+}
+
+.email-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.email-text {
+  flex: 1;
+}
+
+.email-text span {
+  display: block;
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.email-text strong {
+  font-size: 1rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.email-arrow {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+/* Social links */
+.social-title {
+  font-family: "Orbitron", monospace;
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  transform: translateX(8px);
+  border-color: var(--primary);
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.sn-li .social-icon {
+  background: #0077b5;
+}
+
+.sn-ig .social-icon {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+.sn-gh .social-icon {
+  background: #24292e;
+}
+
+.sn-sc {
+  background: #fffc00;
+  border-color: #fffc00;
+}
+
+.sn-sc:hover {
+  border-color: #e0dc00;
+}
+
+.sn-sc .social-link-info strong {
+  color: #000;
+}
+.sn-sc .social-link-info span {
+  color: #555;
+}
+
+.social-link-info strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.social-link-info span {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* ── 9. FOOTER ────────────────────────────── */
+footer {
+  padding: 2rem 6vw;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+footer .logo {
+  color: var(--primary);
+}
+
+/* ── 10. ANIMATIONS ───────────────────────── */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Subtle scanline overlay across whole page */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+/* ── 11. RESPONSIVE (MOBILE) ──────────────── */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section {
+    padding: 80px 4vw 40px;
+  }
+}
+
+/* ── FADE-IN ANIMATION (triggered by JS IntersectionObserver) ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   NEW ADDITIONS — v2 tweaks
+   ============================================================ */
+
+/* ── CAROUSEL (About section photo slider) ──────────────────
+   Two slides cross-fade every 5 seconds.
+   aspect-ratio keeps container height stable while
+   both slides are position:absolute inside it.          */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4; /* portrait ratio — both photos are portrait */
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  pointer-events: none;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85) contrast(1.1);
+  transition: filter 0.4s;
+}
+
+.about-img-frame:hover .carousel-slide.active img {
+  filter: saturate(1.1) contrast(1.05);
+}
+
+/* Dot indicators */
+.carousel-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+}
+
+.dot.active {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* ── SKILLS TITLE ───────────────────────────────────────────
+   Styled like gallery-title but primary colour,
+   NO border-bottom (no underline).                     */
+
+.skills-title {
+  font-family: "Orbitron", monospace;
+  font-size: 1.1rem;
+  color: var(--primary);
+  letter-spacing: 3px;
+  margin-bottom: 1.2rem;
+  /* deliberately no border-bottom */
+}
+
+/* ── ELEVATOR PITCH SECTION ─────────────────────────────────  */
+
+#pitch {
+  background: linear-gradient(
+    180deg,
+    var(--bg) 0%,
+    rgba(0, 212, 255, 0.04) 50%,
+    var(--bg) 100%
+  );
+}
+
+.pitch-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.pitch-description h3 {
+  font-family: "Orbitron", monospace;
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.pitch-description p {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.pitch-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.pitch-tag {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+  letter-spacing: 2px;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 6px) 0,
+    100% 6px,
+    100% 100%,
+    6px 100%,
+    0 calc(100% - 6px)
+  );
+}
+
+/* The video wrapper box */
+.pitch-video-wrap {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s;
+}
+
+.pitch-video-wrap:hover {
+  border-color: var(--primary);
+}
+
+/* Actual Loom iframe — uncomment in HTML when ready */
+.pitch-iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+  display: block;
+}
+
+/* Placeholder shown until Loom URL is added */
+.pitch-placeholder {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.pitch-placeholder-icon {
+  font-size: 3.5rem;
+  color: var(--primary);
+  opacity: 0.35;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.pitch-placeholder p {
+  font-family: "Orbitron", monospace;
+  font-size: 0.95rem;
+  color: var(--muted);
+  letter-spacing: 3px;
+  margin-bottom: 0.6rem;
+}
+
+.pitch-placeholder span {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  color: rgba(122, 155, 181, 0.45);
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+/* ── SHOWCASE SECTION ───────────────────────────────────────
+   Full natural-width images (no forced cropping).
+   3-column responsive grid.                            */
+
+#showcase {
+  background: var(--bg);
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  align-items: start; /* allow different natural heights per item */
+}
+
+.showcase-item {
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition:
+    border-color 0.3s,
+    transform 0.3s;
+  background: #08172a;
+}
+
+.showcase-item:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 212, 255, 0.1);
+}
+
+/* Full natural image width — NO forced height, NO cover crop */
+.showcase-item img,
+.showcase-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.showcase-item:hover img,
+.showcase-item:hover video {
+  transform: scale(1.02);
+}
+
+/* "View Full" hint that appears on hover */
+.showcase-hint {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(5, 10, 20, 0.85), transparent);
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--primary);
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.showcase-item:hover .showcase-hint {
+  opacity: 1;
+}
+
+/* ── LIGHTBOX MODAL ─────────────────────────────────────────
+   Full-screen overlay with prev/next navigation.
+   Closes on backdrop click or Escape key.           */
+
+.lightbox {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(5, 10, 20, 0.97);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+.lightbox.open {
+  display: flex; /* JS adds .open to show it */
+}
+
+/* The image or video rendered inside the lightbox */
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border: 1px solid var(--border);
+}
+
+.lightbox-content video {
+  max-width: 90vw;
+  max-height: 80vh;
+  border: 1px solid var(--border);
+}
+
+/* Close button — top-right */
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-family: "Orbitron", monospace;
+  font-size: 1.4rem;
+  color: var(--primary);
+  background: none;
+  border: 1px solid var(--border);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lightbox-close:hover {
+  color: #fff;
+  border-color: var(--primary);
+  background: rgba(0, 212, 255, 0.1);
+}
+
+/* Prev / Next navigation buttons */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: var(--primary);
+  background: rgba(5, 10, 20, 0.6);
+  border: 1px solid var(--border);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: sans-serif;
+  line-height: 1;
+}
+
+.lightbox-nav:hover {
+  background: rgba(0, 212, 255, 0.12);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.lightbox-prev {
+  left: 1.5rem;
+}
+.lightbox-next {
+  right: 1.5rem;
+}
+
+/* "1 / 3" counter at bottom */
+.lightbox-counter {
+  position: absolute;
+  bottom: 2rem;
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 4px;
+}
+
+/* ── RESPONSIVE ADDITIONS ───────────────────────────────────  */
+
+@media (max-width: 768px) {
+  .pitch-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .showcase-grid {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+
+  .lightbox-prev {
+    left: 0.5rem;
+  }
+  .lightbox-next {
+    right: 0.5rem;
+  }
+
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+}
+
+/* ============================================================
+   FEATURED PROJECT CARD (AHICP) — home page #portfolio
+   Wider two-column card: image carousel + write-up, tech badges,
+   and a link row (Case Study / GitHub). Reuses .carousel classes
+   but with a 16:9 modifier since these are dashboard screenshots,
+   not portrait photos like the About slider.
+   ============================================================ */
+
+.featured-project {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.featured-project:hover {
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+}
+
+.featured-project .carousel.landscape {
+  aspect-ratio: 16 / 9;
+}
+
+.featured-project .carousel.landscape .carousel-slide img {
+  object-fit: cover;
+  object-position: top;
+  filter: none;
+}
+
+.featured-project-body {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  font-family: "Space Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--gold);
+  padding: 0.3rem 0.7rem;
+  margin-bottom: 0.9rem;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 6px) 0,
+    100% 6px,
+    100% 100%,
+    6px 100%,
+    0 calc(100% - 6px)
+  );
+}
+
+.featured-project-body h3 {
+  font-family: "Orbitron", monospace;
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.featured-project-body p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.tech-badge {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  background: rgba(0, 212, 255, 0.05);
+  padding: 0.3rem 0.65rem;
+}
+
+.featured-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.featured-project-links .card-link.btn-style {
+  border: 1px solid var(--primary);
+  padding: 0.55rem 1.1rem;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+}
+
+.featured-project-links .card-link.btn-style:hover {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+/* ── VIEW ALL PROJECTS BUTTON ────────────────────────────────*/
+.view-all-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: "Orbitron", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  padding: 0.9rem 1.8rem;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+  transition: all 0.3s;
+}
+
+.view-all-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(123, 47, 255, 0.25);
+}
+
+/* ============================================================
+   PROJECTS PAGE (projects.html)
+   Horizontal category pill nav + full grid of every project,
+   filterable by category.
+   ============================================================ */
+
+.projects-hero {
+  padding: 6rem 8vw 0;
+  text-align: center;
+  min-height: auto;
+}
+
+.projects-grid-section {
+  min-height: auto;
+  padding: 0;
+}
+
+.projects-hero .section-header {
+  margin-bottom: 1.25rem;
+}
+
+.back-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+}
+
+.back-home-link:hover {
+  color: var(--primary);
+}
+
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  margin: 0.5rem 0 0;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.category-pill {
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.55rem 1.3rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+}
+
+.category-pill:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.category-pill.active {
+  color: var(--bg);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.projects-page-grid {
+  padding: 1rem 8vw 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.projects-page-grid .project-card,
+.projects-page-grid .featured-project {
+  display: none;
+}
+
+.projects-page-grid .project-card.show,
+.projects-page-grid .featured-project.show {
+  display: grid;
+}
+
+.projects-page-grid .project-card.show {
+  display: block;
+}
+
+.project-category-tag {
+  font-family: "Space Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── RESPONSIVE: featured project + projects page ───────────*/
+@media (max-width: 860px) {
+  .featured-project {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-hero {
+    padding-top: 6rem;
+  }
+}

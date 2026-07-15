@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Projects | WolfeTech Devs</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Space+Mono&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ================================================
+         NAVIGATION (simplified — links back to home sections)
+         ================================================ -->
+    <nav>
+      <a href="index.html#home" class="nav-logo">Wolfe<span>Tech</span> Devs</a>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#showcase">Showcase</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ================================================
+         PAGE HERO
+         ================================================ -->
+    <section class="projects-hero">
+      <a href="index.html#portfolio" class="back-home-link"
+        >&#8249; Back to Home</a
+      >
+      <div
+        class="section-header fade-in"
+        style="margin: 0 auto 0; max-width: 700px">
+        <div class="section-tag" style="justify-content: center">
+          All Projects
+        </div>
+        <h2>The Full <em>Portfolio</em></h2>
+        <div
+          class="section-line"
+          style="margin-left: auto; margin-right: auto"></div>
+      </div>
+
+      <!-- CATEGORY FILTER — horizontal pill list -->
+      <div class="category-nav fade-in">
+        <button class="category-pill active" data-category="all">
+          All Projects
+        </button>
+        <button class="category-pill" data-category="data-analytics">
+          Data Analytics &amp; BI
+        </button>
+        <button class="category-pill" data-category="team">
+          Team Collaborations
+        </button>
+      </div>
+    </section>
+
+    <!-- ================================================
+         PROJECTS GRID
+         ================================================ -->
+    <section class="projects-grid-section">
+      <div class="projects-page-grid">
+        <!-- ============================================
+             AHICP — Flagship Data Analytics & BI Project
+             ============================================ -->
+        <div
+          id="ahicp"
+          class="project-card featured-project fade-in show"
+          data-category="data-analytics">
+          <div class="carousel landscape" id="ahicp-page-carousel">
+            <div class="carousel-slide active">
+              <img
+                src="assets/projects/ahicp/ahicp_executive.jpeg"
+                alt="AHICP Executive Dashboard — Power BI" />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="assets/projects/ahicp/ahicp_customer_risk.jpeg"
+                alt="AHICP Customer Risk Dashboard — Power BI" />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="assets/projects/ahicp/ahicp_operations.jpeg"
+                alt="AHICP Operations Dashboard — Power BI" />
+            </div>
+            <div class="carousel-dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+            </div>
+          </div>
+
+          <div class="featured-project-body">
+            <span class="project-category-tag">Data Analytics &amp; BI</span>
+            <h3 style="margin-top: 0.5rem">
+              AHICP — Insurance Risk Analytics &amp; BI Platform
+            </h3>
+            <p>
+              A full end-to-end insurance risk analytics build simulating an
+              internal data analytics team: raw Excel data profiled and cleaned
+              in Python, loaded into Google BigQuery, transformed with SQL
+              feature engineering into a custom 0–100 Risk Score per employee,
+              and delivered as three interactive Power BI dashboards (Executive,
+              Customer Risk, Operations).
+            </p>
+            <p>
+              17 business questions answered end-to-end, including a
+              caught-and-fixed data quality bug (an INNER JOIN silently dropping
+              558 employees) that materially changed the final risk picture — a
+              real example of analyst rigor, not just chart building.
+            </p>
+            <div class="tech-badges">
+              <span class="tech-badge">Python &amp; Pandas</span>
+              <span class="tech-badge">Jupyter</span>
+              <span class="tech-badge">Google BigQuery</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Power BI &amp; DAX</span>
+              <span class="tech-badge">ERD / dbdiagram.io</span>
+            </div>
+            <div class="featured-project-links">
+              <a
+                href="https://github.com/FredWolfe/AHICP-Insurance-Risk-Analytics"
+                target="_blank"
+                class="card-link btn-style"
+                >View Code on GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- /AHICP -->
+
+        <!-- ============================================
+             QuickNest — ALX Team Project
+             ============================================ -->
+        <div class="project-card fade-in show" data-category="team">
+          <div class="card-header">
+            <span class="card-tag">ALX Team-Work &bull; Google Slides</span>
+            <span class="card-icon">📊</span>
+          </div>
+          <div class="card-body">
+            <h3>QuickNest Presentation</h3>
+            <p>
+              An ALX team project presentation showcasing our collaborative
+              efforts.
+            </p>
+            <iframe
+              class="card-embed"
+              src="https://docs.google.com/presentation/d/1ksHlQgMmQAvGrCtbBon8gJDVNUVcI8f91YgofV2AXxA/embed?start=false&loop=false&delayms=3000"
+              height="220"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- ============================================
+             Data Gathering & Analysis — ALX Team Project
+             ============================================ -->
+        <div class="project-card fade-in show" data-category="team">
+          <div class="card-header">
+            <span class="card-tag">Data Analysis &bull; Google Slides</span>
+            <span class="card-icon">🔬</span>
+          </div>
+          <div class="card-body">
+            <h3>Data Gathering &amp; Analysis</h3>
+            <p>
+              Strategic research presentation demonstrating analytical thinking
+              and problem-solving methodology.
+            </p>
+            <iframe
+              class="card-embed"
+              src="https://docs.google.com/presentation/d/1OvNHosgmYr3NaEzgyv-4ECY7DilsUhyGS_tWvqo-1yo/embed?start=false&loop=false&delayms=3000"
+              height="220"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <!-- /projects-page-grid -->
+    </section>
+
+    <!-- ================================================
+         FOOTER
+         ================================================ -->
+    <footer>
+      <span class="logo">WolfeTech Devs</span>
+      <span>© 2026 Wolfe Awotwi · Built with purpose</span>
+      <span style="color: var(--muted)">ALX Africa · Cohort 2026</span>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
